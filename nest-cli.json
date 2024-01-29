@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/taas-nft-apis/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/taas-nft-apis/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/taas-nft-apis",
+  "projects": {
+    "api": {
+      "type": "application",
+      "root": "apps/api",
+      "entryFile": "main",
+      "sourceRoot": "apps/api/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/api/tsconfig.app.json"
+      }
+    },
+    "ethers": {
+      "type": "library",
+      "root": "libs/ethers",
+      "entryFile": "index",
+      "sourceRoot": "libs/ethers/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/ethers/tsconfig.lib.json"
+      }
+    },
+    "quicknode": {
+      "type": "library",
+      "root": "libs/quicknode",
+      "entryFile": "index",
+      "sourceRoot": "libs/quicknode/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/quicknode/tsconfig.lib.json"
+      }
+    }
+  }
+}
